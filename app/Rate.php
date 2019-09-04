@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\ExchangeRate;
 
 class Rate extends Model
 {
@@ -10,6 +11,6 @@ class Rate extends Model
 
    public function exchangeRate()
    {
-       return $this->belongsTo('App\ExchangeRate');
+       return $this->belongsTo(ExchangeRate::class);
    }
 }

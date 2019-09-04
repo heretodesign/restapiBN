@@ -17,6 +17,16 @@ Route::resource('/base-rate/{bank_code}', 'BaseRate\BaseRateBankCodeController')
 
 /*===========================      Interest Rate  ========================================*/
 
-
 Route::resource('interest-rate', 'InterestRate\InterestRateController')->only(['index', 'show']);
 Route::resource('/interest-rate/date/{date}', 'InterestRate\InterestRateDateController')->only(['index']);
+
+
+/*===========================      KUALA LUMPUR USD/MYR  ========================================*/
+
+Route::resource('/kl-usd-reference-rate', 'KlUsdReferenceRate\KlUsdReferenceRateController')->only(['index']);
+// Route::resource('/kl-usd-reference-rate/date/{date}', 'KlUsdReferenceRate\KlUsdReferenceRateDateController@index')->only(['index']);
+
+/*===========================      Financial Consumer Alert   ========================================*/
+// Route::get('/consumer-alert', 'ConsumerAlert\ConsumerAlertController@index');
+// Route::get('/public/consumer-alert/{str}', 'ConsumerAlertSearchController@index');
+Route::resource('/consumer-alert', 'ConsumerAlert\ConsumerAlertController')->only(['index', 'show']);

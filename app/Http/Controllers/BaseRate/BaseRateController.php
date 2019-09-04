@@ -2,84 +2,33 @@
 
 namespace App\Http\Controllers\BaseRate;
 
+use App\Http\Resources\BaseRateResource;
+use App\Http\Resources\BaseRateCollection;
+
 use Illuminate\Http\Request;
+use App\BaseRate;
 use App\Http\Controllers\Controller;
 
 class BaseRateController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+  /**
+   *
+   * @return BaseRateCollection
+   */
+    public function index(): BaseRateCollection
     {
-        //
+      // return new BaseRateCollection(BaseRate::all());
+      return new BaseRateCollection(BaseRate::paginate());
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
-     * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param  BaseRate $baseRate
+     * @return BaseRateResource
      */
-    public function store(Request $request)
+    public function show(BaseRate $baseRate): BaseRateResource
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+      return new BaseRateResource($baseRate);
     }
 }

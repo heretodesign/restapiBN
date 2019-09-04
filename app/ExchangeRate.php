@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Rate;
 
 class ExchangeRate extends Model
 {
@@ -14,9 +15,9 @@ class ExchangeRate extends Model
   /**
   * Get the rates for the exchange rate
   */
-   public function rate()
-   {
-       return $this->hasMany('App\Rate');
-   }
+  public function rate()
+  {
+      return $this->hasMany(Rate::class);
+  }
 
 }

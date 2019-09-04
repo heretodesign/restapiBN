@@ -15,6 +15,11 @@ class CreateBaseRatesTable extends Migration
     {
         Schema::create('base_rates', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('bank_code');
+            $table->string('bank_name');
+            $table->decimal('base_rate', 5, 4);
+            $table->decimal('indicative_eff_lending_rate', 5, 4);
+            $table->decimal('base_lending_rate', 5, 4);
             $table->timestamps();
         });
     }
