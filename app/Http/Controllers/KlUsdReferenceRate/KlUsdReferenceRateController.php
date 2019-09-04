@@ -4,7 +4,7 @@ namespace App\Http\Controllers\KlUsdReferenceRate;
 
 use App\Http\Resources\KlUsdReferenceRateResource;
 use App\Http\Resources\KlUsdReferenceRateCollection;
-
+use App\KlUsdReferenceRate;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
